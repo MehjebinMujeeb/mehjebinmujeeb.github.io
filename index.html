@@ -4,20 +4,157 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" />
-    <script src="app.js"></script>
-    <title>Anchor - Focus Timer</title>
+    <title>Meha</title>
+    <style>
+        html, body {
+            margin : 0px;
+            padding: 0px;
+            scroll-behavior: smooth;
+        }
+        
+        nav {
+            background-color: gold;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top:0;
+            padding: 18px 16px 18px 16px; /* T R B L */
+            /* border-left: 10px solid green; */
+            background-color: white;
+            box-shadow: 0px 0px 3px 3px rgba(25, 25, 25, 0.3); 
+            
+        }
+
+        nav a {
+            display: inline;
+            vertical-align: middle;
+            text-decoration: none;
+            font-size: 16px;
+            color: rgb(40, 38, 38);
+            padding: 0px 16px 0px 16px;
+        }
+
+        .navbar-logo {
+            display: inline;
+            vertical-align: middle;
+            width: 42px;
+            
+        }
+
+        nav a:hover {
+
+        }
+
+        nav a:visited {
+            color: rgb(40, 38, 38);
+        }
+
+        .searchBar {
+            float: right;
+            width: 250px;
+            display: inline;
+            vertical-align: middle;
+            font-size: 14px;
+            margin-left: 50px;
+            outline: none;
+            border : 1px solid rgb(40, 38, 38, 0.3);
+            color: rgb(40, 38, 38);
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 10px 20px 10px 20px;
+        }
+
+        .searchBar::placeholder{
+
+        }
+
+        .searchBar:hover{
+            width: 250px;
+            cursor:auto;
+            transition: ease-in .3s;
+            padding: 10px 25px 10px 25px;
+        }
+
+        section {
+            height: 100vh;
+        }
+
+        #home {
+            background-color: green;
+        }
+
+        #section1{
+            background-color: yellow;
+        }
+
+        #section2 {
+            background-color: aqua;
+        }
+
+        #section3 {
+            background-color: grey;
+        }
+    
+        #home .cover {
+            background-color: grey;
+            height: 35px;
+            margin-top: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #home .cover .title {
+            color: white;
+        }
+
+        #home .cover .get-started-btn {
+            display: block;
+        }
+
+    </style>
+
+   
 </head>
 <body>
-    <div class="navbar">
-        <h1><a href="#Home" >ANCHOR</a></h1>
 
-        <ul>
-            <li class="navbar__links"><a href="#Home">Home</a></li>
-            <li class="navbar__links"><a href="#About">About</a></li>
-            <li class="navbar__links"><a href="#Getstarted">Get Started</a></li>
-            <li class="navbar__links"><a href="#Contact">Contact</a></li>
-        </ul>
-    </div>
+    <nav>
+        <a href="#home" >
+            <img 
+              class="navbar-logo" 
+              src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png"
+            ></img>
+        </a>
+        <a href="#home" >Home</a>
+        <a href="#section1" >About</a>
+        <a href="#section2" >Project</a>
+        <a href="#section3" >Posts</a>
+
+        <input type="text" id="search" class="searchBar" onClick="searchClick" placeholder="Search" >
+
+    </nav>
+
+    <section id="home">
+        <div class="cover">
+            <span class="title">
+                A FOCUS TIMER FOR EVERYONE
+            </span>
+            <a class="get-started-btn">
+                Get Started
+            </a>
+        </div>
+      
+    </section>
+
+    <section id="section1">
+        
+    </section>
+
+    <section id="section2">
+        
+    </section>
+
+    <section id="section3">
+        
+    </section>
 </body>
 </html>
