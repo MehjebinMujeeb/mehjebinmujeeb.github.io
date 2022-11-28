@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    <a href="https://www.flaticon.com/free-icons/done" title="done icons">Done icons created by Artem Buz - Flaticon</a>
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meha</title>
+    <style>
+        @font-face {
+        font-family: 'Satoshi-Regular';
+        src: url('/fonts/Satoshi-Regular.woff2') format('woff2'),
+            url('/fonts/Satoshi-Regular.woff') format('woff'),
+            url('/fonts/Satoshi-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+            font-style: normal;
+        }
+
+
+        @font-face {
+        font-family: 'Satoshi-Italic';
+        src: url('/fonts/Satoshi-Italic.woff2') format('woff2'),
+            url('/fonts/Satoshi-Italic.woff') format('woff'),
+            url('/fonts/Satoshi-Italic.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+            font-style: italic;
+        }
+
+
+        @font-face {
+        font-family: 'Satoshi-Medium';
+        src: url('/fonts/Satoshi-Medium.woff2') format('woff2'),
+            url('/fonts/Satoshi-Medium.woff') format('woff'),
+            url('/fonts/Satoshi-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+            font-style: normal;
+        }
+
+
+        @font-face {
+        font-family: 'Satoshi-MediumItalic';
+        src: url('/fonts/Satoshi-MediumItalic.woff2') format('woff2'),
+            url('/fonts/Satoshi-MediumItalic.woff') format('woff'),
+            url('/fonts/Satoshi-MediumItalic.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+            font-style: italic;
+        }
+
+        @font-face {
+        font-family: 'Satoshi-Light';
+        src: url('/fonts/Satoshi-Light.woff2') format('woff2'),
+            url('/fonts/Satoshi-Light.woff') format('woff'),
+            url('/fonts/Satoshi-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-display: swap;
+            font-style: normal;
+        }
+
+
+        @font-face {
+        font-family: 'Satoshi-Bold';
+        src: url('/fonts/Satoshi-Bold.woff2') format('woff2'),
+            url('/fonts/Satoshi-Bold.woff') format('woff'),
+            url('/fonts/Satoshi-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        @font-face {
+        font-family: 'Satoshi-Black';
+        src: url('/fonts/Satoshi-Black.woff2') format('woff2'),
+            url('/fonts/Satoshi-Black.woff') format('woff'),
+            url('/fonts/Satoshi-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        html, body {
+            margin : 0px;
+            padding: 0px;
+            scroll-behavior: smooth;
+            font-size: 16px;
+            font-family: 'Satoshi-Regular', sans-serif;
+        }
+        body{
+            background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+        }
+        nav {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top:0;
+            padding: 18px 84px 18px 84px; /* T R B L */
+            /* border-left: 10px solid green; */
+            background-color: white;
+            box-shadow: 0px 0px 3px 3px rgba(25, 25, 25, 0.3); 
+            
+        }
+
+        .nav-btn {
+            display: inline-block;
+            height: 42px;
+            border-radius: 8px;
+            background-color: white;
+            padding: 16px 5px 16px 5px;
+            text-decoration: none;
+            text-align: center;
+            outline: none;
+            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+        }
+
+
+        .nav-links {
+            display: inline;
+            float: right;
+            vertical-align: middle;
+            height: 42px;
+        }
+
+        .nav-links .nav-link {
+            line-height: 42px; /* For centering the text */
+            vertical-align: middle;
+            text-decoration: none;
+            font-size: 16px;
+            color: rgb(40, 38, 38);
+            padding: 0px 16px 0px 16px;
+        }
+
+        .navbar-logo {
+            display: inline;
+            vertical-align: middle;
+            height: 42px;
+        }
+
+        nav a:hover {
+
+        }
+
+        nav a:visited {
+            color: rgb(40, 38, 38);
+        }
+
+        .searchBar {
+            float: right;
+            width: 250px;
+            display: inline;
+            vertical-align: middle;
+            font-size: 14px;
+            margin-left: 50px;
+            outline: none;
+            border : 1px solid rgb(40, 38, 38, 0.3);
+            color: rgb(40, 38, 38);
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 10px 20px 10px 20px;
+        }
+
+        .searchBar::placeholder{
+
+        }
+
+        /* .searchBar:hover{
+            width: 250px;
+            cursor:auto;
+            transition: ease-in .3s;
+            padding: 10px 25px 10px 25px;
+        } */
+
+        section {
+            height: 100vh;
+        }
+
+        #home {
+            /* background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%); */
+        }
+
+        #section1{
+            background-color: yellow;
+        }
+
+        #section2 {
+            background-color: aqua;
+        }
+
+        #section3 {
+            background-color: grey;
+        }
+    
+        #home .cover {
+            padding-top: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #home .cover .title {
+            font-size: 4em;
+            font-family: 'Satoshi-Black', sans-serif;
+            color: black;
+        }
+
+        #home .cover .get-started-btn {
+            display: block;
+            
+            width: 130px;
+            margin: auto;
+            border-radius: 10px;
+            background-color: rgb(92, 92, 228);
+            padding: 16px 5px 16px 5px;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+        }
+
+        .bottom-nav-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            right: auto;
+            left: 50%;
+            transform: translate(-50%, 0);
+            padding: 21px 21px 21px 21px;
+            width: 300px;
+            margin-bottom: 10px;
+            background-color: rgba(253, 253, 253, 0.254);
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+        }
+        
+    
+        .bottom-nav-bar a {
+            text-decoration: none;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .bottom-nav-bar a img {
+            height: 40px;
+        }
+
+        .bottom-nav-bar a img:hover {
+            height: 40px;
+        }
+
+        .todo-window{
+            margin: 30px 30px 30px 30px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+            width: 300px;
+            height: auto;
+            opacity: 0.9;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.625);
+            padding: 25px 25px 25px 25px;
+            border-radius: 10px;
+            
+        }
+
+        .todo-list {
+            width: 100%;
+            display: flex;
+            align-items:center;
+            align-content: center;
+            justify-content: left;
+            justify-items: left;
+            flex-direction: column;
+        }
+
+        .todo-item {
+            margin: 10px 10px 10px 10px;
+            width: 100%;
+            height: auto;
+            border: none;
+            font-size: 16px;
+            background-color: white;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+            border-radius: 2px;
+        }
+
+        .item-done {
+            display: flex;
+            flex-direction: row;
+            justify-items: start;
+            justify-content: left;
+            align-content: center;
+            align-items: center;
+            border-left: 5px solid rgb(99, 222, 99);
+        }
+        
+        .item-inprogress {
+            display: flex;
+            flex-direction: row;
+            justify-items: start;
+            justify-content: left;
+            align-content: center;
+            align-items: center;
+            border-left: 5px solid cornflowerblue;
+        }
+
+        .item-inprogress img{
+            width: 24px;
+            height: 24px;
+            filter: grayscale(1);
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+       
+
+        .item-done img{
+            width: 24px;
+            height: 24px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+
+        .todo-item p{
+          text-align: left;
+          margin-right: 8px;
+        }
+
+        .todo-window .text {
+            width: 280px;
+            height: 20px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+            border-radius: 10px;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .todo-window .button {
+            display: block;
+            min-width: 100%;
+            max-width: 100%;
+            height: 40px;
+            border: none;
+            color:white;
+            font-size: 16px;
+            background-color: white;
+            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            padding: 10px 10px 10px 10px !important;
+        }
+
+        .btn-red {
+            background-color: crimson !important;
+        }
+
+        .btn-blue {
+            background-color: cornflowerblue !important;
+        }
+    </style>
+
+    <script type="text/javascript" >
+
+        var taskArray = [];
+
+        function swapItemState(id)
+        {
+            
+            var obj = taskArray[id];
+
+            if(obj.state === 'item-inprogress')
+            {
+                obj.state = 'item-done';
+            }
+            else
+            {
+                obj.state = 'item-inprogress';
+            }
+            
+
+            fillList();
+        }
+
+        function fillList() {
+            let taskList = document.getElementsByClassName("todo-list")[0];
+            taskList.innerHTML = "";
+
+            for (var taskObj of taskArray)
+            {
+
+                let taskItem = '<div onclick="swapItemState(' + taskObj.id + ')" id="' +
+                     taskObj.id + '" class="todo-item ' + taskObj.state  +  '" >' +
+                     '<img src="/images/accept.png"></img><p>' +
+                     taskObj.title +
+                     '</p></div>';
+
+                taskList.innerHTML = taskList.innerHTML + taskItem;
+            }
+        }
+
+
+        function addTask() {
+            let taskTextBox = document.getElementById("task-text");
+            var text = taskTextBox.value;
+
+            // Prevent adding it the text box is empty;
+            text = text.trim();
+
+            if(text.length <= 0)
+            {
+                return;
+            }
+
+            var taskObj = {
+                id: taskArray.length,
+                title: text,
+                state: 'item-inprogress'
+            }
+
+            taskArray.push(taskObj)
+
+            // console.table(taskArray);
+            taskTextBox.value = "";
+
+            fillList();
+            
+        }
+
+        function clearTask() {
+
+        }
+
+    </script>
+   
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <nav>
+        <a href="/" >
+            <img 
+              class="navbar-logo" 
+              src="images/logo.svg"
+            ></img>
+        </a>
+
+        <span class="nav-links">
+          <a class="nav-link nav-btn" href="#section4" >00:00</a>
+        </span>
+    </nav>
+    <!-- Navbar Ends -->
+
+    <section id="home">  
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="todo-window" >
+            <input type="text" class="text" id="task-text" placeholder="Task"/>
+            <br>
+            <input type="button" class="button btn-blue" onclick="addTask()" value="Add Task"/>
+            <input type="button" class="button btn-red" onclick="clearTask()" value="Clear Task"/>
+            <br>
+
+            <div class="todo-list">
+                <div class="todo-item item-inprogress" >
+                    <img src="/images/accept.png"></img>
+                    <p>Complete Reading Poems, Then do something , something</p>
+                </div>
+                <div class="todo-item item-done">
+                    <img src="/images/accept.png"></img>
+                    <p>Pay the bills</p>
+                </div>
+                <div class="todo-item item-done">
+                    <img src="/images/accept.png"></img>
+                    <p>Complete Reading Poems, Then do something , something</p>
+                </div>
+                <div class="todo-item item-inprogress">
+                    <img src="/images/accept.png"></img>
+                    <p>Pay the bills</p>
+                </div>
+                <div class="todo-item item-done">
+                    <img src="/images/accept.png"></img>
+                    <p>Complete Reading Poems, Then do something , something</p>
+                </div>
+                <div class="todo-item item-inprogress">
+                    <img src="/images/accept.png"></img>
+                    <p>Pay the bills</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timer-window" >
+
+        </div>
+
+        <div class="bottom-nav-bar">
+           <a>
+            <img src="/images/timer.png"></img>
+           </a>
+           <a>
+            <img src="/images/todo.png"></img>
+           </a>
+        </div>
+
+    </section>
+
+
+
+</body>
+</html>

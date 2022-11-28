@@ -6,27 +6,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meha</title>
     <style>
+        @font-face {
+        font-family: 'Satoshi-Regular';
+        src: url('/fonts/Satoshi-Regular.woff2') format('woff2'),
+            url('/fonts/Satoshi-Regular.woff') format('woff'),
+            url('/fonts/Satoshi-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+            font-style: normal;
+        }
+
+
+        @font-face {
+        font-family: 'Satoshi-Italic';
+        src: url('/fonts/Satoshi-Italic.woff2') format('woff2'),
+            url('/fonts/Satoshi-Italic.woff') format('woff'),
+            url('/fonts/Satoshi-Italic.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+            font-style: italic;
+        }
+
+
+        @font-face {
+        font-family: 'Satoshi-Medium';
+        src: url('/fonts/Satoshi-Medium.woff2') format('woff2'),
+            url('/fonts/Satoshi-Medium.woff') format('woff'),
+            url('/fonts/Satoshi-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+            font-style: normal;
+        }
+
+
+        @font-face {
+        font-family: 'Satoshi-MediumItalic';
+        src: url('/fonts/Satoshi-MediumItalic.woff2') format('woff2'),
+            url('/fonts/Satoshi-MediumItalic.woff') format('woff'),
+            url('/fonts/Satoshi-MediumItalic.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+            font-style: italic;
+        }
+
+        @font-face {
+        font-family: 'Satoshi-Light';
+        src: url('/fonts/Satoshi-Light.woff2') format('woff2'),
+            url('/fonts/Satoshi-Light.woff') format('woff'),
+            url('/fonts/Satoshi-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-display: swap;
+            font-style: normal;
+        }
+
+
+        @font-face {
+        font-family: 'Satoshi-Bold';
+        src: url('/fonts/Satoshi-Bold.woff2') format('woff2'),
+            url('/fonts/Satoshi-Bold.woff') format('woff'),
+            url('/fonts/Satoshi-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        @font-face {
+        font-family: 'Satoshi-Black';
+        src: url('/fonts/Satoshi-Black.woff2') format('woff2'),
+            url('/fonts/Satoshi-Black.woff') format('woff'),
+            url('/fonts/Satoshi-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-display: swap;
+            font-style: normal;
+        }
+
         html, body {
             margin : 0px;
             padding: 0px;
             scroll-behavior: smooth;
+            font-size: 16px;
+            font-family: 'Satoshi-Regular', sans-serif;
         }
         
         nav {
-            background-color: gold;
             position: fixed;
             left: 0;
             right: 0;
             top:0;
-            padding: 18px 16px 18px 16px; /* T R B L */
+            padding: 18px 84px 18px 84px; /* T R B L */
             /* border-left: 10px solid green; */
             background-color: white;
             box-shadow: 0px 0px 3px 3px rgba(25, 25, 25, 0.3); 
             
         }
 
-        nav a {
+        .nav-btn {
+            display: inline-block;
+            height: 42px;
+            border-radius: 8px;
+            background-color: white;
+            padding: 16px 5px 16px 5px;
+            text-decoration: none;
+            text-align: center;
+            outline: none;
+            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+        }
+
+
+        .nav-links {
             display: inline;
+            float: right;
+            vertical-align: middle;
+            height: 42px;
+        }
+
+        .nav-links .nav-link {
+            line-height: 42px; /* For centering the text */
             vertical-align: middle;
             text-decoration: none;
             font-size: 16px;
@@ -37,8 +132,7 @@
         .navbar-logo {
             display: inline;
             vertical-align: middle;
-            width: 42px;
-            
+            height: 42px;
         }
 
         nav a:hover {
@@ -68,19 +162,19 @@
 
         }
 
-        .searchBar:hover{
+        /* .searchBar:hover{
             width: 250px;
             cursor:auto;
             transition: ease-in .3s;
             padding: 10px 25px 10px 25px;
-        }
+        } */
 
         section {
             height: 100vh;
         }
 
         #home {
-            background-color: green;
+            background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
         }
 
         #section1{
@@ -96,19 +190,32 @@
         }
     
         #home .cover {
-            background-color: grey;
-            height: 35px;
-            margin-top: 200px;
+            padding-top: 200px;
             margin-left: auto;
             margin-right: auto;
+            text-align: center;
         }
 
         #home .cover .title {
-            color: white;
+            font-size: 4em;
+            font-family: 'Satoshi-Black', sans-serif;
+            color: black;
         }
 
         #home .cover .get-started-btn {
             display: block;
+            
+            width: 130px;
+            margin: auto;
+            border-radius: 10px;
+            background-color: rgb(92, 92, 228);
+            padding: 16px 5px 16px 5px;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
         }
 
     </style>
@@ -121,24 +228,29 @@
         <a href="#home" >
             <img 
               class="navbar-logo" 
-              src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_O_Preview_Logo.png"
+              src="images/logo.svg"
             ></img>
         </a>
-        <a href="#home" >Home</a>
-        <a href="#section1" >About</a>
-        <a href="#section2" >Project</a>
-        <a href="#section3" >Posts</a>
 
-        <input type="text" id="search" class="searchBar" onClick="searchClick" placeholder="Search" >
+        <span class="nav-links">
+        <a class="nav-link" href="#home" >Home</a>
+        <a class="nav-link" href="#section1" >About</a>
+        <a class="nav-link" href="#section2" >Contact</a>
+        <a class="nav-link" href="#section3" >References</a>
+        <a class="nav-link nav-btn" href="focus.html" >Get Started</a>
+        </span>
+
 
     </nav>
 
     <section id="home">
         <div class="cover">
             <span class="title">
-                A FOCUS TIMER FOR EVERYONE
+                A focus timer for everyone
             </span>
-            <a class="get-started-btn">
+            <br>
+            <br>
+            <a class="get-started-btn" href="focus.html">
                 Get Started
             </a>
         </div>
