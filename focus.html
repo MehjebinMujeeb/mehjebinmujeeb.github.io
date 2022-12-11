@@ -10,6 +10,14 @@
     <title>Meha</title>
     <style>
         @font-face {
+            font-family: 'Digital-Display-Regular';
+            src: url('/fonts/digital_display_regular.ttf') format('truetype');
+            font-weight: 700;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        @font-face {
         font-family: 'Satoshi-Regular';
         src: url('/fonts/Satoshi-Regular.woff2') format('woff2'),
             url('/fonts/Satoshi-Regular.woff') format('woff'),
@@ -91,7 +99,10 @@
             font-family: 'Satoshi-Regular', sans-serif;
         }
         body{
-            background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	        background-size: 400% 400%;
+	        animation: background-gradient 15s ease infinite;
+            /* background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%); */
         }
         nav {
             position: fixed;
@@ -102,7 +113,7 @@
             /* border-left: 10px solid green; */
             background-color: white;
             box-shadow: 0px 0px 3px 3px rgba(25, 25, 25, 0.3); 
-            
+            z-index:200;
         }
 
         .nav-btn {
@@ -223,54 +234,121 @@
             box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
         }
 
-        .bottom-nav-bar {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            right: auto;
-            left: 50%;
-            transform: translate(-50%, 0);
-            padding: 21px 21px 21px 21px;
-            width: 300px;
-            margin-bottom: 10px;
-            background-color: rgba(253, 253, 253, 0.254);
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-        }
-        
-    
-        .bottom-nav-bar a {
-            text-decoration: none;
-            outline: none;
-            cursor: pointer;
-            text-align: center;
+        .main-window {
+            max-height: 80vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            justify-items: center;
         }
 
-        .bottom-nav-bar a img {
-            height: 40px;
-        }
-
-        .bottom-nav-bar a img:hover {
-            height: 40px;
-        }
-
-        .todo-window{
-            margin: 30px 30px 30px 30px;
+        .timer-window {
+            width: 30%;
+            max-width: 30%;
+            background-color: grey;
+            margin: 10px 10px 10px 10px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             align-content: center;
             flex-direction: column;
-            width: 300px;
+            height: 350px;
+            opacity: 0.9;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.625);
+            padding: 45px 55px 45px 55px;
+            border-radius: 10px;
+        }
+        
+
+        .todo-window{
+            width: 70%;
+            max-width: 70%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            background-color: grey;
+            margin: 10px 10px 10px 60px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
             height: auto;
             opacity: 0.9;
             text-align: center;
             background-color: rgba(255, 255, 255, 0.625);
-            padding: 25px 25px 25px 25px;
+            padding: 45px 55px 45px 55px;
             border-radius: 10px;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE and Edge */
             
         }
+
+        .todo-window::-webkit-scrollbar{
+            display: none; /* Safari and Chrome */
+        }
+
+
+        @media screen and (min-width: 641px) and (max-width:1024px) {
+            .main-window {
+                height: auto;
+                max-height: unset;
+                min-height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .todo-window {
+                width: auto;
+                max-width: 100%;
+                margin: 0px 0px 0px 0px;
+                padding: 45px 80px 45px 80px;
+                border-radius: 0px;
+            }
+
+            .timer-window{
+                width: 100%;
+                max-width: 100%;
+                margin: 10px 0px 20px 0px;
+                height: 390px;
+                padding: 25px 0px 25px 0px;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+
+            .main-window {  
+                max-height: unset;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .todo-window {
+                width: auto;
+                max-width: 100%;
+                margin: 0px 0px 0px 0px;
+                padding: 25px 25px 25px 25px;
+            }
+
+            .timer-window{
+                width: 100%;
+                max-width: 100%;
+                height: 390px;
+                margin: 10px 0px 20px 0px;
+                padding: 25px 0px 25px 0px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            
+            }
+
+        }
+       
 
         .todo-list {
             width: 100%;
@@ -338,13 +416,14 @@
         }
 
         .todo-window .text {
-            width: 280px;
+            text-align: center;
+            width: 100%;
             height: 20px;
             border: none;
             font-size: 16px;
             box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
             border-radius: 10px;
-            padding: 10px 10px 10px 10px;
+            padding: 10px 0px 10px 0px;
         }
 
         .todo-window .button {
@@ -370,6 +449,143 @@
         .btn-blue {
             background-color: cornflowerblue !important;
         }
+
+        .clock-text {
+            color: black;
+            font-size: 4em;
+            font-family: 'Satoshi-Black';
+        }
+        
+        .no-task-image {
+            animation-name: no-task-animation;
+            animation-duration: 2s;
+            animation-delay: 0.8s;
+            animation-iteration-count: infinite;
+            height: 80px;
+            width: 80px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .timers-section button {
+            outline: none;
+            border: none;
+            padding: 10px 10px 10px 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+        }
+
+        .timer-btns {
+          
+        }
+
+        /* <a href="https://www.flaticon.com/free-icons/reset" title="reset icons">Reset icons created by Dixit Lakhani_02 - Flaticon</a> */
+        /* <a href="https://www.flaticon.com/free-icons/pause" title="pause icons">Pause icons created by Slidicon - Flaticon</a> */
+        /* <a href="https://www.flaticon.com/free-icons/play-button" title="play button icons">Play button icons created by abdul allib - Flaticon</a> */
+        .round-btn{
+            display: inline-block;
+            background-color: white;
+            height: 60px;
+            width: 60px;
+            margin: 10px 10px 10px 10px;
+            padding: 10px 10px 10px 10px;
+            border-radius: 60px;
+            border: none;
+            outline: none;
+            box-shadow: 0px 0px 3px 3px rgb(40, 38, 38, 0.3);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50% 50%;
+            cursor: pointer;
+        }
+
+        .play-btn {
+            background-image: url('/images/play.png');
+        }
+
+        .pause-btn {
+            background-image: url('/images/pause-button.png');
+        }
+
+        .redo-btn {
+            background-image: url('/images/redo.png');
+        }
+
+        .redo-btn:hover {
+            transform: rotate(90deg);
+        }
+
+
+        /* Animation Keyframes */
+        @keyframes no-task-animation {
+
+            0% {
+                background-image: url('/images/no-task-3.png');
+            }
+            50% {
+                background-image: url('/images/no-task-2.png');
+            }
+            100% {
+                background-image: url('/images/no-task.png');
+            }
+            
+        }
+
+        @keyframes background-gradient {
+            0% {
+		        background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes background-linear-gradient-animation {
+
+            0% {
+                background: linear-gradient(10deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            10% {
+                background: linear-gradient(50deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            20% {
+                background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            30% {
+                background: linear-gradient(100deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            40% {
+                background: linear-gradient(120deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            50% {
+                background: linear-gradient(160deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            60% {
+                background: linear-gradient(180deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            70% {
+                background: linear-gradient(230deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            80% {
+                background: linear-gradient(270deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            90% {
+                background: linear-gradient(300deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+            100% {
+                background: linear-gradient(360deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+            }
+        } 
+
     </style>
 
     <script type="text/javascript" >
@@ -409,6 +625,11 @@
 
                 taskList.innerHTML = taskList.innerHTML + taskItem;
             }
+
+            if(taskArray.length == 0)
+            {
+                taskList.innerHTML = "<div class=\"no-task-image\"></div>"
+            }
         }
 
 
@@ -440,8 +661,132 @@
         }
 
         function clearTask() {
+            taskArray = [];
+            fillList();
+        }
+
+
+
+        var selectedDuration = 1200;
+        var totalSeconds = 1200; // 20 mins in Seconds
+        var timer;
+        
+        isPaused = false;
+        isFirstTime = true;
+
+        function playAndPause()
+        {
+            var playButton = document.getElementById("play-button");
+            isPaused = !isPaused;
+
+            if(isPaused)
+            {
+                playButton.classList.remove("pause-btn");
+                playButton.classList.add("play-btn");
+            }
+            else
+            {
+                playButton.classList.remove("play-btn");
+                playButton.classList.add("pause-btn");
+            }
+
+            if(isFirstTime)
+            {
+                isFirstTime = false;
+                timerFunc();
+            }
+        }
+
+        function timerFunc() {
+            let clock = document.getElementById("clock");
+            timer = setInterval(function(){
+                var mins = Math.floor(totalSeconds/60);
+                var secs = totalSeconds % 60;
+                
+                if(mins < 10)
+                {
+                    mins = "0" + mins
+                }
+
+                if(secs < 10)
+                {
+                    secs = "0" + secs
+                }
+
+                var clockText = mins + ":" + secs;
+
+                clock.innerHTML = clockText;
+
+                if(isPaused)
+                {
+                    return;
+                }
+
+                totalSeconds --;
+
+                if(totalSeconds <= 0)
+                {
+                    resetTimer();
+                }
+                
+            }, 1000);
 
         }
+
+        function selectTimerDuration(duration) {
+            let clock = document.getElementById("clock");
+            resetTimer();
+            selectedDuration = duration;
+            totalSeconds = duration;
+            var mins = Math.floor(totalSeconds/60);
+            var secs = totalSeconds % 60;
+            
+            if(mins < 10)
+            {
+                mins = "0" + mins
+            }
+
+            if(secs < 10)
+            {
+                secs = "0" + secs
+            }
+            var clockText = mins + ":" + secs;
+            clock.innerHTML = clockText;
+        }
+
+        function resetTimer(){
+            let clock = document.getElementById("clock");
+            if(timer === undefined || timer === null)
+            {
+                return;
+            }
+
+            clearTimeout(timer);
+            timer = null;
+
+            totalSeconds = selectedDuration;
+            var mins = Math.floor(totalSeconds/60);
+            var secs = totalSeconds % 60;
+            
+            if(mins < 10)
+            {
+                mins = "0" + mins
+            }
+
+            if(secs < 10)
+            {
+                secs = "0" + secs
+            }
+            var clockText = mins + ":" + secs;
+            clock.innerHTML = clockText;
+
+           isFirstTime = true;
+           isPaused = false;
+           let playButton = document.getElementById("play-button");
+           playButton.classList.remove("pause-btn");
+           playButton.classList.add("play-btn");
+        }
+
 
     </script>
    
@@ -453,7 +798,7 @@
         <a href="/" >
             <img 
               class="navbar-logo" 
-              src="images/logo.svg"
+              src="images/logonew.svg"
             ></img>
         </a>
 
@@ -468,17 +813,40 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
+
+        <!-- START OF MAIN WINDOW -->
+        <div class="main-window"> 
+
+        <!-- START OF TIMER WINDOW -->
+        <div class="timer-window" >
+            <h1>Time to Work!</h1>
+            <h2 id="clock" class="clock-text">00:00</h2>
+            <div class="timers-section">
+                <button onclick="selectTimerDuration(1200)">20:00</button>
+                <button onclick="selectTimerDuration(1500)">25:00</button>
+                <button onclick="selectTimerDuration(1800)">30:00</button>
+            </div>
+            <div class="timer-btns">
+                <button onclick="playAndPause()" id="play-button" class="round-btn play-btn" ></button>
+                <button onclick="resetTimer()" class="round-btn redo-btn" ></button>
+            </div>
+        </div> <!-- END OF TIMER WINDOW -->
+
+        <!-- START OF MAIN WINDOW -->
         <div class="todo-window" >
+          
             <input type="text" class="text" id="task-text" placeholder="Task"/>
-            <br>
+            <div style="padding: 16px 16px 16px 16px;"></div>
             <input type="button" class="button btn-blue" onclick="addTask()" value="Add Task"/>
             <input type="button" class="button btn-red" onclick="clearTask()" value="Clear Task"/>
-            <br>
-
+            <div style="padding: 16px 16px 16px 16px;"></div>
             <div class="todo-list">
-                <div class="todo-item item-inprogress" >
+                <div class="no-task-image">
+                    <!-- <img src="/images/no-task.png" height="80px" >
+                    <img src="/images/no-task-2.png" height="80px" >
+                    <img src="/images/no-task-3.png" height="80px" > -->
+                </div>
+                <!-- <div class="todo-item item-inprogress" >
                     <img src="/images/accept.png"></img>
                     <p>Complete Reading Poems, Then do something , something</p>
                 </div>
@@ -501,26 +869,20 @@
                 <div class="todo-item item-inprogress">
                     <img src="/images/accept.png"></img>
                     <p>Pay the bills</p>
-                </div>
+                </div> -->
             </div>
-        </div>
+        </div> <!-- END OF TODO WINDOW -->
 
-        <div class="timer-window" >
+     
 
-        </div>
-
-        <div class="bottom-nav-bar">
-           <a>
-            <img src="/images/timer.png"></img>
-           </a>
-           <a>
-            <img src="/images/todo.png"></img>
-           </a>
-        </div>
+    
+        </div> <!-- END OF MAIN WINDOW -->
 
     </section>
 
 
-
 </body>
+<script>
+    //  timerFunc();
+</script>
 </html>
