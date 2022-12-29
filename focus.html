@@ -7,586 +7,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meha</title>
-    <style>
-        @font-face {
-            font-family: 'Digital-Display-Regular';
-            src: url('/fonts/digital_display_regular.ttf') format('truetype');
-            font-weight: 700;
-            font-display: swap;
-            font-style: normal;
-        }
-
-        @font-face {
-        font-family: 'Satoshi-Regular';
-        src: url('/fonts/Satoshi-Regular.woff2') format('woff2'),
-            url('/fonts/Satoshi-Regular.woff') format('woff'),
-            url('/fonts/Satoshi-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-            font-style: normal;
-        }
-
-
-        @font-face {
-        font-family: 'Satoshi-Italic';
-        src: url('/fonts/Satoshi-Italic.woff2') format('woff2'),
-            url('/fonts/Satoshi-Italic.woff') format('woff'),
-            url('/fonts/Satoshi-Italic.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-            font-style: italic;
-        }
-
-
-        @font-face {
-        font-family: 'Satoshi-Medium';
-        src: url('/fonts/Satoshi-Medium.woff2') format('woff2'),
-            url('/fonts/Satoshi-Medium.woff') format('woff'),
-            url('/fonts/Satoshi-Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
-            font-style: normal;
-        }
-
-
-        @font-face {
-        font-family: 'Satoshi-MediumItalic';
-        src: url('/fonts/Satoshi-MediumItalic.woff2') format('woff2'),
-            url('/fonts/Satoshi-MediumItalic.woff') format('woff'),
-            url('/fonts/Satoshi-MediumItalic.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
-            font-style: italic;
-        }
-
-        @font-face {
-        font-family: 'Satoshi-Light';
-        src: url('/fonts/Satoshi-Light.woff2') format('woff2'),
-            url('/fonts/Satoshi-Light.woff') format('woff'),
-            url('/fonts/Satoshi-Light.ttf') format('truetype');
-            font-weight: 300;
-            font-display: swap;
-            font-style: normal;
-        }
-
-
-        @font-face {
-        font-family: 'Satoshi-Bold';
-        src: url('/fonts/Satoshi-Bold.woff2') format('woff2'),
-            url('/fonts/Satoshi-Bold.woff') format('woff'),
-            url('/fonts/Satoshi-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-display: swap;
-            font-style: normal;
-        }
-
-        @font-face {
-        font-family: 'Satoshi-Black';
-        src: url('/fonts/Satoshi-Black.woff2') format('woff2'),
-            url('/fonts/Satoshi-Black.woff') format('woff'),
-            url('/fonts/Satoshi-Black.ttf') format('truetype');
-            font-weight: 900;
-            font-display: swap;
-            font-style: normal;
-        }
-
-        html, body {
-            margin : 0px;
-            padding: 0px;
-            scroll-behavior: smooth;
-            font-size: 16px;
-            font-family: 'Satoshi-Regular', sans-serif;
-        }
-        body{
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	        background-size: 400% 400%;
-	        animation: background-gradient 15s ease infinite;
-            /* background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%); */
-        }
-        nav {
-            position: fixed;
-            left: 0;
-            right: 0;
-            top:0;
-            padding: 18px 84px 18px 84px; /* T R B L */
-            /* border-left: 10px solid green; */
-            background-color: white;
-            box-shadow: 0px 0px 3px 3px rgba(25, 25, 25, 0.3); 
-            z-index:200;
-        }
-
-        .nav-btn {
-            display: inline-block;
-            height: 42px;
-            border-radius: 8px;
-            background-color: white;
-            padding: 16px 5px 16px 5px;
-            text-decoration: none;
-            text-align: center;
-            outline: none;
-            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-        }
-
-
-        .nav-links {
-            display: inline;
-            float: right;
-            vertical-align: middle;
-            height: 42px;
-        }
-
-        .nav-links .nav-link {
-            line-height: 42px; /* For centering the text */
-            vertical-align: middle;
-            text-decoration: none;
-            font-size: 16px;
-            color: rgb(40, 38, 38);
-            padding: 0px 16px 0px 16px;
-        }
-
-        .navbar-logo {
-            display: inline;
-            vertical-align: middle;
-            height: 42px;
-        }
-
-        nav a:hover {
-
-        }
-
-        nav a:visited {
-            color: rgb(40, 38, 38);
-        }
-
-        .searchBar {
-            float: right;
-            width: 250px;
-            display: inline;
-            vertical-align: middle;
-            font-size: 14px;
-            margin-left: 50px;
-            outline: none;
-            border : 1px solid rgb(40, 38, 38, 0.3);
-            color: rgb(40, 38, 38);
-            border-radius: 20px;
-            cursor: pointer;
-            padding: 10px 20px 10px 20px;
-        }
-
-        .searchBar::placeholder{
-
-        }
-
-        /* .searchBar:hover{
-            width: 250px;
-            cursor:auto;
-            transition: ease-in .3s;
-            padding: 10px 25px 10px 25px;
-        } */
-
-        section {
-            height: 100vh;
-        }
-
-        #home {
-            /* background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%); */
-        }
-
-        #section1{
-            background-color: yellow;
-        }
-
-        #section2 {
-            background-color: aqua;
-        }
-
-        #section3 {
-            background-color: grey;
-        }
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
     
-        #home .cover {
-            padding-top: 200px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
+    <title>Meha</title>
 
-        #home .cover .title {
-            font-size: 4em;
-            font-family: 'Satoshi-Black', sans-serif;
-            color: black;
-        }
-
-        #home .cover .get-started-btn {
-            display: block;
-            
-            width: 130px;
-            margin: auto;
-            border-radius: 10px;
-            background-color: rgb(92, 92, 228);
-            padding: 16px 5px 16px 5px;
-            text-decoration: none;
-            text-align: center;
-            color: white;
-            outline: none;
-            cursor: pointer;
-            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-        }
-
-        .main-window {
-            max-height: 80vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            justify-items: center;
-        }
-
-        .timer-window {
-            width: 30%;
-            max-width: 30%;
-            background-color: grey;
-            margin: 10px 10px 10px 10px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            align-content: center;
-            flex-direction: column;
-            height: 350px;
-            opacity: 0.9;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.625);
-            padding: 45px 55px 45px 55px;
-            border-radius: 10px;
-        }
-        
-
-        .todo-window{
-            width: 70%;
-            max-width: 70%;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            background-color: grey;
-            margin: 10px 10px 10px 60px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            align-content: center;
-            flex-direction: column;
-            height: auto;
-            opacity: 0.9;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.625);
-            padding: 45px 55px 45px 55px;
-            border-radius: 10px;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none;  /* IE and Edge */
-            
-        }
-
-        .todo-window::-webkit-scrollbar{
-            display: none; /* Safari and Chrome */
-        }
-
-
-        @media screen and (min-width: 641px) and (max-width:1024px) {
-            .main-window {
-                height: auto;
-                max-height: unset;
-                min-height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .todo-window {
-                width: auto;
-                max-width: 100%;
-                margin: 0px 0px 0px 0px;
-                padding: 45px 80px 45px 80px;
-                border-radius: 0px;
-            }
-
-            .timer-window{
-                width: 100%;
-                max-width: 100%;
-                margin: 10px 0px 20px 0px;
-                height: 390px;
-                padding: 25px 0px 25px 0px;
-            }
-        }
-
-        @media screen and (max-width: 640px) {
-
-            .main-window {  
-                max-height: unset;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .todo-window {
-                width: auto;
-                max-width: 100%;
-                margin: 0px 0px 0px 0px;
-                padding: 25px 25px 25px 25px;
-            }
-
-            .timer-window{
-                width: 100%;
-                max-width: 100%;
-                height: 390px;
-                margin: 10px 0px 20px 0px;
-                padding: 25px 0px 25px 0px;
-            }
-
-            nav {
-                text-align: center;
-            }
-
-            .nav-links {
-                display: none;
-            
-            }
-
-        }
-       
-
-        .todo-list {
-            width: 100%;
-            display: flex;
-            align-items:center;
-            align-content: center;
-            justify-content: left;
-            justify-items: left;
-            flex-direction: column;
-        }
-
-        .todo-item {
-            margin: 10px 10px 10px 10px;
-            width: 100%;
-            height: auto;
-            border: none;
-            font-size: 16px;
-            background-color: white;
-            cursor: pointer;
-            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-            border-radius: 2px;
-        }
-
-        .item-done {
-            display: flex;
-            flex-direction: row;
-            justify-items: start;
-            justify-content: left;
-            align-content: center;
-            align-items: center;
-            border-left: 5px solid rgb(99, 222, 99);
-        }
-        
-        .item-inprogress {
-            display: flex;
-            flex-direction: row;
-            justify-items: start;
-            justify-content: left;
-            align-content: center;
-            align-items: center;
-            border-left: 5px solid cornflowerblue;
-        }
-
-        .item-inprogress img{
-            width: 24px;
-            height: 24px;
-            filter: grayscale(1);
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-
-       
-
-        .item-done img{
-            width: 24px;
-            height: 24px;
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-
-
-        .todo-item p{
-          text-align: left;
-          margin-right: 8px;
-        }
-
-        .todo-window .text {
-            text-align: center;
-            width: 100%;
-            height: 20px;
-            border: none;
-            font-size: 16px;
-            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-            border-radius: 10px;
-            padding: 10px 0px 10px 0px;
-        }
-
-        .todo-window .button {
-            display: block;
-            min-width: 100%;
-            max-width: 100%;
-            height: 40px;
-            border: none;
-            color:white;
-            font-size: 16px;
-            background-color: white;
-            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-            border-radius: 10px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            padding: 10px 10px 10px 10px !important;
-        }
-
-        .btn-red {
-            background-color: crimson !important;
-        }
-
-        .btn-blue {
-            background-color: cornflowerblue !important;
-        }
-
-        .clock-text {
-            color: black;
-            font-size: 4em;
-            font-family: 'Satoshi-Black';
-        }
-        
-        .no-task-image {
-            animation-name: no-task-animation;
-            animation-duration: 2s;
-            animation-delay: 0.8s;
-            animation-iteration-count: infinite;
-            height: 80px;
-            width: 80px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
-
-        .timers-section button {
-            outline: none;
-            border: none;
-            padding: 10px 10px 10px 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: white;
-            color: black;
-        }
-
-        .timer-btns {
-          
-        }
-
-        /* <a href="https://www.flaticon.com/free-icons/reset" title="reset icons">Reset icons created by Dixit Lakhani_02 - Flaticon</a> */
-        /* <a href="https://www.flaticon.com/free-icons/pause" title="pause icons">Pause icons created by Slidicon - Flaticon</a> */
-        /* <a href="https://www.flaticon.com/free-icons/play-button" title="play button icons">Play button icons created by abdul allib - Flaticon</a> */
-        .round-btn{
-            display: inline-block;
-            background-color: white;
-            height: 60px;
-            width: 60px;
-            margin: 10px 10px 10px 10px;
-            padding: 10px 10px 10px 10px;
-            border-radius: 60px;
-            border: none;
-            outline: none;
-            box-shadow: 0px 0px 3px 3px rgb(40, 38, 38, 0.3);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 50% 50%;
-            cursor: pointer;
-        }
-
-        .play-btn {
-            background-image: url('/images/play.png');
-        }
-
-        .pause-btn {
-            background-image: url('/images/pause-button.png');
-        }
-
-        .redo-btn {
-            background-image: url('/images/redo.png');
-        }
-
-        .redo-btn:hover {
-            transform: rotate(90deg);
-        }
-
-
-        /* Animation Keyframes */
-        @keyframes no-task-animation {
-
-            0% {
-                background-image: url('/images/no-task-3.png');
-            }
-            50% {
-                background-image: url('/images/no-task-2.png');
-            }
-            100% {
-                background-image: url('/images/no-task.png');
-            }
-            
-        }
-
-        @keyframes background-gradient {
-            0% {
-		        background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes background-linear-gradient-animation {
-
-            0% {
-                background: linear-gradient(10deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            10% {
-                background: linear-gradient(50deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            20% {
-                background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            30% {
-                background: linear-gradient(100deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            40% {
-                background: linear-gradient(120deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            50% {
-                background: linear-gradient(160deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            60% {
-                background: linear-gradient(180deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            70% {
-                background: linear-gradient(230deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            80% {
-                background: linear-gradient(270deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            90% {
-                background: linear-gradient(300deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-            100% {
-                background: linear-gradient(360deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-            }
-        } 
-
-    </style>
 
     <script type="text/javascript" >
 
@@ -611,13 +35,13 @@
         }
 
         function fillList() {
-            let taskList = document.getElementsByClassName("todo-list")[0];
+            var taskList = document.getElementsByClassName("todo-list")[0];
             taskList.innerHTML = "";
 
             for (var taskObj of taskArray)
             {
 
-                let taskItem = '<div onclick="swapItemState(' + taskObj.id + ')" id="' +
+                var taskItem = '<div onclick="swapItemState(' + taskObj.id + ')" id="' +
                      taskObj.id + '" class="todo-item ' + taskObj.state  +  '" >' +
                      '<img src="/images/accept.png"></img><p>' +
                      taskObj.title +
@@ -634,7 +58,7 @@
 
 
         function addTask() {
-            let taskTextBox = document.getElementById("task-text");
+            var taskTextBox = document.getElementById("task-text");
             var text = taskTextBox.value;
 
             // Prevent adding it the text box is empty;
@@ -671,13 +95,16 @@
         var totalSeconds = 1200; // 20 mins in Seconds
         var timer;
         
-        isPaused = false;
+        isPaused = true;
         isFirstTime = true;
 
         function playAndPause()
         {
             var playButton = document.getElementById("play-button");
             isPaused = !isPaused;
+
+            console.log(isPaused);
+            console.log(isFirstTime);
 
             if(isPaused)
             {
@@ -698,7 +125,7 @@
         }
 
         function timerFunc() {
-            let clock = document.getElementById("clock");
+            var clock = document.getElementById("clock");
             timer = setInterval(function(){
                 var mins = Math.floor(totalSeconds/60);
                 var secs = totalSeconds % 60;
@@ -734,7 +161,7 @@
         }
 
         function selectTimerDuration(duration) {
-            let clock = document.getElementById("clock");
+            var clock = document.getElementById("clock");
             resetTimer();
             selectedDuration = duration;
             totalSeconds = duration;
@@ -755,7 +182,7 @@
         }
 
         function resetTimer(){
-            let clock = document.getElementById("clock");
+            var clock = document.getElementById("clock");
             if(timer === undefined || timer === null)
             {
                 return;
@@ -781,8 +208,8 @@
             clock.innerHTML = clockText;
 
            isFirstTime = true;
-           isPaused = false;
-           let playButton = document.getElementById("play-button");
+           isPaused = true;
+           var playButton = document.getElementById("play-button");
            playButton.classList.remove("pause-btn");
            playButton.classList.add("play-btn");
         }
@@ -798,7 +225,7 @@
         <a href="/" >
             <img 
               class="navbar-logo" 
-              src="images/logonew.svg"
+              src="images/logo.svg"
             ></img>
         </a>
 
@@ -820,7 +247,7 @@
         <!-- START OF TIMER WINDOW -->
         <div class="timer-window" >
             <h1>Time to Work!</h1>
-            <h2 id="clock" class="clock-text">00:00</h2>
+            <h2 id="clock" class="clock-text">20:00</h2>
             <div class="timers-section">
                 <button onclick="selectTimerDuration(1200)">20:00</button>
                 <button onclick="selectTimerDuration(1500)">25:00</button>
@@ -837,8 +264,8 @@
           
             <input type="text" class="text" id="task-text" placeholder="Task"/>
             <div style="padding: 16px 16px 16px 16px;"></div>
-            <input type="button" class="button btn-blue" onclick="addTask()" value="Add Task"/>
-            <input type="button" class="button btn-red" onclick="clearTask()" value="Clear Task"/>
+            <input type="button" id="addTaskBtn" class="button btn-blue" value="Add Task"/>
+            <input type="button" id="clearTaskBtn" class="button btn-red" value="Clear Task"/>
             <div style="padding: 16px 16px 16px 16px;"></div>
             <div class="todo-list">
                 <div class="no-task-image">
@@ -883,6 +310,8 @@
 
 </body>
 <script>
-    //  timerFunc();
+    //  Adding event listners
+    document.getElementById("addTaskBtn").addEventListener('click', addTask);
+    document.getElementById("clearTaskBtn").addEventListener('click', clearTask);
 </script>
 </html>

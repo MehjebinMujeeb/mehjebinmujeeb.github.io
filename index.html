@@ -4,90 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
     <title>Meha</title>
+    <!--
     <style>
-        @font-face {
-        font-family: 'Satoshi-Regular';
-        src: url('/fonts/Satoshi-Regular.woff2') format('woff2'),
-            url('/fonts/Satoshi-Regular.woff') format('woff'),
-            url('/fonts/Satoshi-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-            font-style: normal;
-        }
 
-
-        @font-face {
-        font-family: 'Satoshi-Italic';
-        src: url('/fonts/Satoshi-Italic.woff2') format('woff2'),
-            url('/fonts/Satoshi-Italic.woff') format('woff'),
-            url('/fonts/Satoshi-Italic.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-            font-style: italic;
-        }
-
-
-        @font-face {
-        font-family: 'Satoshi-Medium';
-        src: url('/fonts/Satoshi-Medium.woff2') format('woff2'),
-            url('/fonts/Satoshi-Medium.woff') format('woff'),
-            url('/fonts/Satoshi-Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
-            font-style: normal;
-        }
-
-
-        @font-face {
-        font-family: 'Satoshi-MediumItalic';
-        src: url('/fonts/Satoshi-MediumItalic.woff2') format('woff2'),
-            url('/fonts/Satoshi-MediumItalic.woff') format('woff'),
-            url('/fonts/Satoshi-MediumItalic.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
-            font-style: italic;
-        }
-
-        @font-face {
-        font-family: 'Satoshi-Light';
-        src: url('/fonts/Satoshi-Light.woff2') format('woff2'),
-            url('/fonts/Satoshi-Light.woff') format('woff'),
-            url('/fonts/Satoshi-Light.ttf') format('truetype');
-            font-weight: 300;
-            font-display: swap;
-            font-style: normal;
-        }
-
-
-        @font-face {
-        font-family: 'Satoshi-Bold';
-        src: url('/fonts/Satoshi-Bold.woff2') format('woff2'),
-            url('/fonts/Satoshi-Bold.woff') format('woff'),
-            url('/fonts/Satoshi-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-display: swap;
-            font-style: normal;
-        }
-
-        @font-face {
-        font-family: 'Satoshi-Black';
-        src: url('/fonts/Satoshi-Black.woff2') format('woff2'),
-            url('/fonts/Satoshi-Black.woff') format('woff'),
-            url('/fonts/Satoshi-Black.ttf') format('truetype');
-            font-weight: 900;
-            font-display: swap;
-            font-style: normal;
-        }
-
-        html, body {
-            margin : 0px;
-            padding: 0px;
-            scroll-behavior: smooth;
-            font-size: 16px;
-            font-family: 'Satoshi-Regular', sans-serif;
-        }
-        
         nav {
             position: fixed;
             left: 0;
@@ -162,6 +83,8 @@
 
         }
 
+        */
+
         /* .searchBar:hover{
             width: 250px;
             cursor:auto;
@@ -178,11 +101,23 @@
         }
 
         #section1{
-            background-color: yellow;
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/12/CargoNet_Di_12_Euro_4000_L%C3%B8nsdal_-_Bolna.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+           
+        }
+
+        #section1 .overlay {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(240, 248, 255, 0.5);
         }
 
         #section2 {
-            background-color: aqua;
+            
+            background-image: url("https://www.thesun.co.uk/wp-content/uploads/2022/10/heavy-flurries-snow-fall-aberystwyth-749876566.jpg");
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         #section3 {
@@ -219,7 +154,7 @@
         }
 
     </style>
-
+-->
    
 </head>
 <body>
@@ -236,18 +171,21 @@
         <a class="nav-link" href="#home" >Home</a>
         <a class="nav-link" href="#section1" >About</a>
         <a class="nav-link" href="#section2" >Contact</a>
-        <a class="nav-link" href="#section3" >References</a>
+        <a class="nav-link" href="#section3" >Blog</a>
         <a class="nav-link nav-btn" href="focus.html" >Get Started</a>
         </span>
 
 
     </nav>
 
-    <section id="home">
+    <section id="home" style="display: flex; justify-content: center; align-items: center;">
         <div class="cover">
             <span class="title">
-                A focus timer for everyone
+                Focus is one click away.
             </span>
+            <p class="subtitle"> 
+                A free online tool to stop distractions and get things done.
+            </p>
             <br>
             <br>
             <a class="get-started-btn" href="focus.html">
@@ -257,16 +195,121 @@
       
     </section>
 
-    <section id="section1">
-        
+    <!-- Making the section display as flex so that the contents can be hoizontally centered -->
+    <section id="section1" style="display: flex; justify-content: center; align-items: center;">
+        <!-- <div class="padding-div" style="padding-top: 80px;"></div> -->
+        <div>
+        <div class="container-div-rev" >
+            <div class="container-col" >
+                <h2>About Us</h2>
+                <p>Welcome to  <span class="highlight-container"><span class="highlight"> TimeToDo! </span></span></p>
+                <p>
+                    Are you tired of getting distracted while trying to focus on a task?
+                    Do you have a long to-do list that always seems overwhelming?
+                    Look no further, because TimeToDo has got you covered.
+                </p>
+                
+            </div>
+            <div class="container-col" >
+                <div style="margin: auto; width: 80%;">
+                    <!-- <a href="https://www.freepik.com/free-vector/focus-mode-concept-illustration_16736617.htm#query=task&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
+                 <img data-inviewport="animate-pop" src="/images/about.svg" width="100%" >
+                </div>
+            </div>
+        </div>
+ 
+        <div class="container-div" >
+            <div class="container-col" >
+                <div style="margin: auto; width: 80%;">
+                    <!-- <a href="https://www.freepik.com/free-vector/focus-mode-concept-illustration_16736617.htm#query=task&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
+                 <img data-inviewport="animate-pop" src="/images/about_2.svg" width="100%" >
+                </div>
+            </div>
+            <div class="container-col" >
+
+                <p>
+                    Our focus timer is here to help you stay on track and avoid distractions.
+                    Simply set the timer for the amount of time you want to focus on a task, and let the timer do
+                     <span class="highlight-container"><span class="highlight"> its magic! </span></span>.
+                </p>
+                <p>
+                    The timer will alert you when your focus time is up, so you can take a break or move on to the next task.
+                    Our to-do list feature is also a lifesaver. You can easily add tasks to your list and check them off as you go.
+                    With TimeToDo, you'll be able to see your progress and stay motivated to tackle your to-do list.
+                </p>
+                <p>
+                    So why wait? Give TimeToDo a try and see how it can help you stay focused and productive. Sign up now and start
+                    getting things done!
+                </p>
+            </div>
+            
+        </div>
+
+        </div>
+
     </section>
 
-    <section id="section2">
-        
+    <section id="section2" style="display: flex; justify-content: center; align-items: center;">
+        <div class="container-div" >
+            <div class="container-col" >
+                <div style="margin: auto; width: 80%;">
+                    <!-- <a href="https://www.freepik.com/free-vector/focus-mode-concept-illustration_16736617.htm#query=task&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
+                 <img src="/images/contact_us.svg" width="100%" >
+                </div>
+            </div>
+            <div class="container-col" >
+                <div id="title">
+                <h2>Contact Us</h2>
+                <p style="text-align: justify;">
+                    Hey there! Thanks for stopping by.<br>
+                    If you have any questions, comments, or just want to say hi, we'd love to hear from you. Just fill out the form below and we'll get back to you as soon as possible.
+                </p>
+                </div>
+                <form action="" method="post">
+                    <label for="username">Name</label><br>
+                    <input type="text" id="username" name="username" placeholder="Your name"><br>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="Email"><br>
+                    <label for="content">What's in your mind</label><br>
+                    <textarea id="content" name="content" placeholder="Tell us something.." style="height:200px"></textarea><br>
+                    <input class="submit-btn" type="submit" value="Submit">
+                </form>
+
+            </div>
+        </div>
     </section>
 
-    <section id="section3">
-        
-    </section>
+    <footer >
+        <a href="#"><img src="/images/socials/facebook.png"  width="32px" ></a>
+        <a href="#"><img src="/images/socials/linkedin.png"  width="32px" ></a>
+        <a href="#"><img src="/images/socials/youtube.png"  width="32px" ></a>
+        <a href="#"><img src="/images/socials/twitter.png"  width="32px" ></a>
+
+        <p>
+            Crafted with <span> &#9829; </span> by Mehjebin Mujeeb
+        </p>
+
+       <a href="">Privacy Policy</a> 
+       &nbsp; &nbsp;
+       <a href="">References</a> 
+
+    </footer>
 </body>
+
+<script>
+const inViewport = (entries, observer) => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
+  });
+};
+
+const Obs = new IntersectionObserver(inViewport);
+const obsOptions = {}; //See: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_options
+
+// Attach observer to every [data-inviewport] element:
+const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
+ELs_inViewport.forEach(EL => {
+  Obs.observe(EL, obsOptions);
+});
+</script>
 </html>
