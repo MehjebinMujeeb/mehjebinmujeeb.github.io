@@ -6,156 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
     <title>Meha</title>
-    <!--
-    <style>
 
-        nav {
-            position: fixed;
-            left: 0;
-            right: 0;
-            top:0;
-            padding: 18px 84px 18px 84px; /* T R B L */
-            /* border-left: 10px solid green; */
-            background-color: white;
-            box-shadow: 0px 0px 3px 3px rgba(25, 25, 25, 0.3); 
-            
-        }
-
-        .nav-btn {
-            display: inline-block;
-            height: 42px;
-            border-radius: 8px;
-            background-color: white;
-            padding: 16px 5px 16px 5px;
-            text-decoration: none;
-            text-align: center;
-            outline: none;
-            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-        }
-
-
-        .nav-links {
-            display: inline;
-            float: right;
-            vertical-align: middle;
-            height: 42px;
-        }
-
-        .nav-links .nav-link {
-            line-height: 42px; /* For centering the text */
-            vertical-align: middle;
-            text-decoration: none;
-            font-size: 16px;
-            color: rgb(40, 38, 38);
-            padding: 0px 16px 0px 16px;
-        }
-
-        .navbar-logo {
-            display: inline;
-            vertical-align: middle;
-            height: 42px;
-        }
-
-        nav a:hover {
-
-        }
-
-        nav a:visited {
-            color: rgb(40, 38, 38);
-        }
-
-        .searchBar {
-            float: right;
-            width: 250px;
-            display: inline;
-            vertical-align: middle;
-            font-size: 14px;
-            margin-left: 50px;
-            outline: none;
-            border : 1px solid rgb(40, 38, 38, 0.3);
-            color: rgb(40, 38, 38);
-            border-radius: 20px;
-            cursor: pointer;
-            padding: 10px 20px 10px 20px;
-        }
-
-        .searchBar::placeholder{
-
-        }
-
-        */
-
-        /* .searchBar:hover{
-            width: 250px;
-            cursor:auto;
-            transition: ease-in .3s;
-            padding: 10px 25px 10px 25px;
-        } */
-
-        section {
-            height: 100vh;
-        }
-
-        #home {
-            background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
-        }
-
-        #section1{
-            background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/12/CargoNet_Di_12_Euro_4000_L%C3%B8nsdal_-_Bolna.jpg");
-            background-size: cover;
-            background-attachment: fixed;
-           
-        }
-
-        #section1 .overlay {
-            width: 100%;
-            height: 100%;
-            background-color: rgba(240, 248, 255, 0.5);
-        }
-
-        #section2 {
-            
-            background-image: url("https://www.thesun.co.uk/wp-content/uploads/2022/10/heavy-flurries-snow-fall-aberystwyth-749876566.jpg");
-            background-size: cover;
-            background-attachment: fixed;
-        }
-
-        #section3 {
-            background-color: grey;
-        }
-    
-        #home .cover {
-            padding-top: 200px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        #home .cover .title {
-            font-size: 4em;
-            font-family: 'Satoshi-Black', sans-serif;
-            color: black;
-        }
-
-        #home .cover .get-started-btn {
-            display: block;
-            
-            width: 130px;
-            margin: auto;
-            border-radius: 10px;
-            background-color: rgb(92, 92, 228);
-            padding: 16px 5px 16px 5px;
-            text-decoration: none;
-            text-align: center;
-            color: white;
-            outline: none;
-            cursor: pointer;
-            box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-        }
-
-    </style>
--->
-   
 </head>
 <body>
 
@@ -172,7 +23,7 @@
         <a class="nav-link" href="#section1" >About</a>
         <a class="nav-link" href="#section2" >Contact</a>
         <a class="nav-link" href="#section3" >Blog</a>
-        <a class="nav-link nav-btn" href="focus.html" >Get Started</a>
+        <a class="nav-link nav-btn" style="background-color: rgb(92, 92, 228) !important; color: white !important; " href="focus.html" >Get Started</a>
         </span>
 
 
@@ -180,17 +31,27 @@
 
     <section id="home" style="display: flex; justify-content: center; align-items: center;">
         <div class="cover">
-            <span class="title">
-                Focus is one click away.
-            </span>
+            <div id="spotlight" style="background-color:green; width: 100vw; height: 100vh; ">
+                <div class="cursor"></div>
+                <div class="shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+                <div class="content">
+                        Focus is one <br>click away.
+                </div>
+            </div>
+            
             <p class="subtitle"> 
                 A free online tool to stop distractions and get things done.
             </p>
             <br>
             <br>
-            <a class="get-started-btn" href="focus.html">
+            <a class="get-started-btn btn-bg-white" href="focus.html">
                 Get Started
             </a>
+            <div style="padding: 20px"></div>
         </div>
       
     </section>
@@ -289,6 +150,10 @@
             Crafted with <span> &#9829; </span> by Mehjebin Mujeeb
         </p>
 
+        <p>
+            <span> &#169; </span> 2023. All rights reserved
+        </p>
+
        <a href="">Privacy Policy</a> 
        &nbsp; &nbsp;
        <a href="">References</a> 
@@ -311,5 +176,30 @@ const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
 ELs_inViewport.forEach(EL => {
   Obs.observe(EL, obsOptions);
 });
+
+
+// Logic for creating the spotlight
+function createSpotlight()
+{
+    const spotlightDiv = document.getElementById("spotlight").addEventListener("mousemove", mousemoveFunction);
+}
+function mousemoveFunction(event) {
+    const shapes = document.getElementsByClassName("shape");
+    const cursor = document.getElementsByClassName("cursor")[0]; // only need the first cursor
+
+    var x = event.clientX;
+    var y = event.clientY;
+
+    //console.log("translate3d(" + x + "," + y + ", 0)");
+
+    cursor.style.transform = "translate3d(" + x + "px," + y + "px, 0)";
+
+    for(var shape of shapes){
+        shape.style.transform = "translate3d(" + x + "px ," + y + "px , 0)";
+    }
+}
+
+createSpotlight();
+
 </script>
 </html>

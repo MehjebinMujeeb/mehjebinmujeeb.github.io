@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            cursor: none;
+        }
+
+        body {
+            font-family: Montserrat, sans-serif;
+            font-weight: 900;
+        }
+
+        .content {
+            top: 0;
+            left: 0;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background: #fff;
+            mix-blend-mode: screen;
+            color: green;
+            font-size: 20em;
+        }
+
+        .cursor {
+            position: fixed;
+            background: #2128bd;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border-radius: 50%;
+            /* will-change: transform; */
+            user-select: none;
+            pointer-events: none;
+            z-index: 10000;
+        }
+
+        .shapes {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            background: #2128bd;
+            overflow: hidden;
+        }
+
+        .shape {
+            will-change: transform;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .shape-1 {
+            background-color: #005ffe;
+            width: 650px;
+            height: 650px;
+            margin: -325px 0px 0px -325px;
+            transition: all 0.2s;
+        }
+
+        .shape-2 {
+            background-color: #ffe5e3;
+            width: 440px;
+            height: 440px;
+            margin: -220px 0px 0px -220px;
+            transition: all 0.1s;
+        }
+
+        .shape-3 {
+            background-color: #ffcc57;
+            width: 270px;
+            height: 270px;
+            margin: -135px 0px 0px -135px;
+            transition: all 0.05s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spotlight" style="background-color:green; width: 100vw; height: 100vh; ">
+        <div class="cursor"></div>
+        <div class="shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="content">
+            Hello There!
+        </div>
+    </div>
+
+
+
+</body>
+
+<script>
+
+function createSpotlight()
+{
+    const spotlightDiv = document.getElementById("spotlight").addEventListener("mousemove", mousemoveFunction);
+}
+function mousemoveFunction(event) {
+    const shapes = document.getElementsByClassName("shape");
+    const cursor = document.getElementsByClassName("cursor")[0]; // only need the first cursor
+
+    var x = event.clientX;
+    var y = event.clientY;
+
+    console.log("translate3d(" + x + "," + y + ", 0)");
+
+    cursor.style.transform = "translate3d(" + x + "px," + y + "px, 0)";
+
+    for(var shape of shapes){
+        shape.style.transform = "translate3d(" + x + "px ," + y + "px , 0)";
+    }
+}
+
+createSpotlight();
+
+    
+</script>
+
+</html>
