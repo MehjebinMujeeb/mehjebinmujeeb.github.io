@@ -86,13 +86,25 @@ html, body {
     scroll-behavior: smooth;
     font-size: 16px;
     font-family: 'Satoshi-Regular', sans-serif;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    overflow-x: hidden;
 }
-body{
+
+html::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+}
+
+/* body{
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: background-gradient 15s ease infinite;
+    overflow-x: hidden; */
     /* background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%); */
-}
+/* } */
+
+
 nav {
     position: fixed;
     left: 0;
@@ -102,12 +114,13 @@ nav {
     /* border-left: 10px solid green; */
     background-color: white;
     box-shadow: 0px 0px 3px 3px rgba(25, 25, 25, 0.3); 
-    z-index:200;
+    z-index:10002;
 }
 
 .nav-btn {
     display: inline-block;
     height: 42px;
+    width: 90px;
     border-radius: 10px;
     background-color: white;
     padding: 16px 5px 16px 5px;
@@ -126,6 +139,15 @@ nav {
 }
 
 .nav-links .nav-link {
+    line-height: 42px; /* For centering the text */
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(40, 38, 38);
+    padding: 0px 16px 0px 16px;
+}
+
+.nav-links-mobile .nav-link {
     line-height: 42px; /* For centering the text */
     vertical-align: middle;
     text-decoration: none;
@@ -185,13 +207,13 @@ section {
     background-size: 400% 400%;
 }
 
-#section1{
+#about{
     position: relative;
     overflow: hidden;
     /* background-color: white; */
 }
 
-#section2 {
+#contact {
     /* background: linear-gradient(-45deg, #ee7752, #ec86ad); */
     background-color: whitesmoke;
     background-size: 400% 400%;
@@ -247,7 +269,7 @@ section {
     box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
 }
 
-/* #section1::before {
+/* #about::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -261,7 +283,7 @@ section {
     clip-path: polygon(0 0%, 100% 0, 100% 80%, 0 100%);
   } */
 
-#section1 {
+#about {
     background-color: white;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -299,12 +321,12 @@ section {
     padding: 16px;
 }
 
-#section2 #title {
+#contact #title {
     padding: 50px 20px 20px 20px;
     text-align: center;
 }
 
-#section2 #title h1{
+#contact #title h1{
     text-align: center;
     padding: 20px;
     font-weight: bolder;
@@ -312,18 +334,18 @@ section {
     font-size: 3em;
 }
 
-#section2 #title p{
+#contact #title p{
     text-align: center;
     font-size: 1em;
 }
 
-#section2 form {
+#contact form {
     max-width: 100%;
     margin: auto;
     padding: 20px 20px 20px 20px;
 }
 
-#section2 form input[type=text], input[type=email] {
+#contact form input[type=text], input[type=email] {
     text-align: center;
     border-radius: 5px;
     border: none;
@@ -334,12 +356,12 @@ section {
     font-size: 1em;
 }
 
-#section2 form label{
+#contact form label{
     text-align: left;
     width: 100%;
 }
 
-#section2 form textarea{
+#contact form textarea{
     text-align: left;
     border-radius: 5px;
     border: none;
@@ -520,7 +542,7 @@ footer a :visited {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: #fff;
     mix-blend-mode: screen;
     font-size: 10em;
@@ -530,17 +552,18 @@ footer a :visited {
 }
 
 .cursor {
-    position: fixed;
+    position: absolute;
     background: #6567FD;
     width: 20px;
     height: 20px;
-    margin: -10px 0 0 -10px;
+    margin: 0px 0 0 0px;
     border-radius: 50%;
     /* will-change: transform; */
     user-select: none;
     pointer-events: none;
     z-index: 10000;
 }
+
 .shapes {
     position: relative;
     height: 100vh;
@@ -581,6 +604,15 @@ footer a :visited {
 }
 
 /* Spotlight Animation Ends */
+
+.md-only {
+    display: none;
+}
+
+.nav-links-mobile {
+    /* display: none; */
+    display: unset;
+}
   
 @keyframes animate-pop {
     0% {
@@ -670,6 +702,36 @@ footer a :visited {
         cursor: none;
     }
     /* Spotlight */
+
+
+    /* nav bar mobile */
+    nav {
+        /* text-align: center; */
+        padding-left: 10px;
+        padding-right: 35px;
+    }
+   
+    .nav-links-mobile {
+        /* display: none; */
+        left: 0; 
+        right: 0; 
+        padding:30px; 
+        margin:0px; 
+        height: 230px; 
+        width: 100%; 
+        position: absolute; 
+        margin-top: 10px; 
+        background-color: #CADDFF; 
+        display: none !important;
+    }
+
+    .nav-links-mobile .nav-link {
+        display: block;
+    }
+
+    .md-only {
+        display: block;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -696,13 +758,11 @@ footer a :visited {
     }
 
     nav {
-        text-align: center;
+        /* text-align: center; */
+        padding-left: 10px;
+        padding-right: 35px;
     }
 
-    .nav-links {
-        display: none;
-    
-    }
 
     .container-div {
         display: flex;
@@ -752,6 +812,27 @@ footer a :visited {
         padding: 16px;
     }
 
+    /* nav bar mobile */
+    .nav-links-mobile {
+        left: 0; 
+        right: 0; 
+        padding:30px; 
+        margin:0px; 
+        height: 230px; 
+        width: 100%; 
+        position: absolute; 
+        margin-top: 10px; 
+        background-color: #CADDFF; 
+        display: none !important;
+    }
+
+    .nav-links-mobile .nav-link {
+        display: block;
+    }
+
+    .md-only {
+        display: block;
+    }
 }
 
 
@@ -852,12 +933,17 @@ footer a :visited {
 }
 
 .btn-blue {
-    background-color: cornflowerblue !important;
+    background-color: #6567FD !important;
+}
+
+.btn-white {
+    background-color: white !important;
+    color: black !important;
 }
 
 .clock-text {
     color: black;
-    font-size: 4em;
+    font-size: 3em;
     font-family: 'Satoshi-Black';
 }
 
@@ -903,7 +989,7 @@ footer a :visited {
     border-radius: 60px;
     border: none;
     outline: none;
-    box-shadow: 0px 0px 3px 3px rgb(40, 38, 38, 0.3);
+    /* box-shadow: 0px 0px 3px 3px rgb(40, 38, 38, 0.3); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50% 50%;

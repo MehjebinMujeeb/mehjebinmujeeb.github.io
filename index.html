@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="images/fav_icon.png" type="image/png" >
     <title>Meha</title>
 
 </head>
@@ -15,23 +16,27 @@
             <img 
               class="navbar-logo" 
               src="images/logo.svg"
+              alt="The logo of a focus timer called TimeToDo along with a picture of a stopwatch"
             ></img>
         </a>
 
-        <span class="nav-links">
+        <span class="nav-links nav-links-mobile" id="menu-bar">
         <a class="nav-link" href="#home" >Home</a>
-        <a class="nav-link" href="#section1" >About</a>
-        <a class="nav-link" href="#section2" >Contact</a>
-        <a class="nav-link" href="#section3" >Blog</a>
+        <a class="nav-link" href="#about"  >About</a>
+        <a class="nav-link" href="#contact" >Contact</a>
+        <a class="nav-link" href="https://blog.mm2307.brighton.domains/" >Blog</a>
         <a class="nav-link nav-btn" style="background-color: rgb(92, 92, 228) !important; color: white !important; " href="focus.html" >Get Started</a>
         </span>
 
+        <span class="nav-links md-only" id="toggle-nav-bar-links">
+                <img style="background-color: rgb(92, 92, 228); cursor: pointer; padding: 8px; border-radius: 8px;" src="/images/more.png" alt="menu hamburger icon for mobile devices" width="24"> 
+        </span>
 
     </nav>
 
     <section id="home" style="display: flex; justify-content: center; align-items: center;">
         <div class="cover">
-            <div id="spotlight" style="background-color:green; width: 100vw; height: 100vh; ">
+            <div id="spotlight" style="background-color:green; width: 100%; height: 100vh; ">
                 <div class="cursor"></div>
                 <div class="shapes">
                     <div class="shape shape-1"></div>
@@ -57,7 +62,7 @@
     </section>
 
     <!-- Making the section display as flex so that the contents can be hoizontally centered -->
-    <section id="section1" style="display: flex; justify-content: center; align-items: center;">
+    <section id="about" style="display: flex; justify-content: center; align-items: center;">
         <!-- <div class="padding-div" style="padding-top: 80px;"></div> -->
         <div>
         <div class="container-div-rev" >
@@ -74,7 +79,7 @@
             <div class="container-col" >
                 <div style="margin: auto; width: 80%;">
                     <!-- <a href="https://www.freepik.com/free-vector/focus-mode-concept-illustration_16736617.htm#query=task&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
-                 <img data-inviewport="animate-pop" src="/images/about.svg" width="100%" >
+                 <img data-inviewport="animate-pop" src="/images/about.svg" alt="A vector illustration of a girl who is struggling to finish her tasks on time." style="width:100%" >
                 </div>
             </div>
         </div>
@@ -83,7 +88,7 @@
             <div class="container-col" >
                 <div style="margin: auto; width: 80%;">
                     <!-- <a href="https://www.freepik.com/free-vector/focus-mode-concept-illustration_16736617.htm#query=task&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
-                 <img data-inviewport="animate-pop" src="/images/about_2.svg" width="100%" >
+                 <img data-inviewport="animate-pop" src="/images/about_2.svg" alt="A vector illustration of a boy who is getting work done and has his life together." style="width:100%" >
                 </div>
             </div>
             <div class="container-col" >
@@ -110,12 +115,12 @@
 
     </section>
 
-    <section id="section2" style="display: flex; justify-content: center; align-items: center;">
+    <section id="contact" style="display: flex; justify-content: center; align-items: center;">
         <div class="container-div" >
             <div class="container-col" >
                 <div style="margin: auto; width: 80%;">
                     <!-- <a href="https://www.freepik.com/free-vector/focus-mode-concept-illustration_16736617.htm#query=task&position=3&from_view=search&track=sph">Image by storyset</a> on Freepik -->
-                 <img src="/images/contact_us.svg" width="100%" >
+                 <img src="/images/contact_us.svg" alt="A vector illustration of a girl who is sending a message." style="width:100%" >
                 </div>
             </div>
             <div class="container-col" >
@@ -141,22 +146,22 @@
     </section>
 
     <footer >
-        <a href="#"><img src="/images/socials/facebook.png"  width="32px" ></a>
-        <a href="#"><img src="/images/socials/linkedin.png"  width="32px" ></a>
-        <a href="#"><img src="/images/socials/youtube.png"  width="32px" ></a>
-        <a href="#"><img src="/images/socials/twitter.png"  width="32px" ></a>
+        <a href="#"><img alt="social icon facebook" src="/images/socials/facebook.png" width="32" ></a>
+        <a href="#"><img alt="social icon linkedin" src="/images/socials/linkedin.png" width="32" ></a>
+        <a href="#"><img alt="social icon youtube" src="/images/socials/youtube.png"  width="32" ></a>
+        <a href="#"><img alt="social icon twitter" src="/images/socials/twitter.png"  width="32" ></a>
 
         <p>
             Crafted with <span> &#9829; </span> by Mehjebin Mujeeb
         </p>
 
         <p>
-            <span> &#169; </span> 2023. All rights reserved
+           &#169; 2023. All rights reserved
         </p>
 
-       <a href="">Privacy Policy</a> 
+       <a href="https://blog.mm2307.brighton.domains/privacy">Privacy Policy</a> 
        &nbsp; &nbsp;
-       <a href="">References</a> 
+       <a href="https://blog.mm2307.brighton.domains/references/">References</a> 
 
     </footer>
 </body>
@@ -200,6 +205,33 @@ function mousemoveFunction(event) {
 }
 
 createSpotlight();
+
+var isMenuBarShown = false;
+function toggleNavBarLinks(event)
+{
+   console.log("helloo");
+   const menuBar = document.getElementById("menu-bar");
+
+   if(isMenuBarShown){
+    menuBar.style.setProperty("display", "none", "important");
+   }
+   else {
+    menuBar.style.setProperty("display", "block", "important");
+   }
+
+   isMenuBarShown = !isMenuBarShown;
+    
+
+}
+
+const navToggleBtn = document.getElementById("toggle-nav-bar-links");
+navToggleBtn.addEventListener("click", toggleNavBarLinks);
+
+// const navLinks = document.getElementsByClassName("nav-link");
+// for(var navLink of navLinks)
+// {
+//     navLink.addEventListener("click", toggleNavBarLinks);
+// }
 
 </script>
 </html>

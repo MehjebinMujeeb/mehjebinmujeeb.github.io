@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut" href="images/fav_icon.png" type="image/png" >
     
     <title>Meha</title>
 
@@ -43,7 +44,7 @@
 
                 var taskItem = '<div onclick="swapItemState(' + taskObj.id + ')" id="' +
                      taskObj.id + '" class="todo-item ' + taskObj.state  +  '" >' +
-                     '<img src="/images/accept.png"></img><p>' +
+                     '<img src="/images/accept.png" alt="A vector illustration of a checkbox."></img><p>' +
                      taskObj.title +
                      '</p></div>';
 
@@ -226,12 +227,13 @@
             <img 
               class="navbar-logo" 
               src="images/logo.svg"
+              alt="The logo of a focus timer called TimeToDo along with a picture of a stopwatch"
             ></img>
         </a>
 
-        <span class="nav-links">
+        <!-- <span class="nav-links">
           <a class="nav-link nav-btn" href="#section4" >00:00</a>
-        </span>
+        </span> -->
     </nav>
     <!-- Navbar Ends -->
 
@@ -265,7 +267,7 @@
             <input type="text" class="text" id="task-text" placeholder="Task"/>
             <div style="padding: 16px 16px 16px 16px;"></div>
             <input type="button" id="addTaskBtn" class="button btn-blue" value="Add Task"/>
-            <input type="button" id="clearTaskBtn" class="button btn-red" value="Clear Task"/>
+            <input type="button" id="clearTaskBtn" class="button btn-white" value="Clear Task"/>
             <div style="padding: 16px 16px 16px 16px;"></div>
             <div class="todo-list">
                 <div class="no-task-image">
