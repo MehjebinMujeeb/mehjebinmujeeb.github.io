@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="images/fav_icon.png" type="image/png" >
-    <title>Meha</title>
+    <title>Time To Do</title>
 
 </head>
 <body>
@@ -131,7 +131,7 @@
                     If you have any questions, comments, or just want to say hi, we'd love to hear from you. Just fill out the form below and we'll get back to you as soon as possible.
                 </p>
                 </div>
-                <form action="" method="post">
+                <form action="#" method="get">
                     <label for="username">Name</label><br>
                     <input type="text" id="username" name="username" placeholder="Your name"><br>
                     <label for="email">Email</label><br>
@@ -166,72 +166,10 @@
     </footer>
 </body>
 
+<!-- Call the script only after the body is complete loaded -->
+<script src="/js/app.js" type="text/javascript"></script>
 <script>
-const inViewport = (entries, observer) => {
-  entries.forEach(entry => {
-    entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
-  });
-};
-
-const Obs = new IntersectionObserver(inViewport);
-const obsOptions = {}; //See: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Intersection_observer_options
-
-// Attach observer to every [data-inviewport] element:
-const ELs_inViewport = document.querySelectorAll('[data-inviewport]');
-ELs_inViewport.forEach(EL => {
-  Obs.observe(EL, obsOptions);
-});
-
-
-// Logic for creating the spotlight
-function createSpotlight()
-{
-    const spotlightDiv = document.getElementById("spotlight").addEventListener("mousemove", mousemoveFunction);
-}
-function mousemoveFunction(event) {
-    const shapes = document.getElementsByClassName("shape");
-    const cursor = document.getElementsByClassName("cursor")[0]; // only need the first cursor
-
-    var x = event.clientX;
-    var y = event.clientY;
-
-    //console.log("translate3d(" + x + "," + y + ", 0)");
-
-    cursor.style.transform = "translate3d(" + x + "px," + y + "px, 0)";
-
-    for(var shape of shapes){
-        shape.style.transform = "translate3d(" + x + "px ," + y + "px , 0)";
-    }
-}
-
-createSpotlight();
-
-var isMenuBarShown = false;
-function toggleNavBarLinks(event)
-{
-   console.log("helloo");
-   const menuBar = document.getElementById("menu-bar");
-
-   if(isMenuBarShown){
-    menuBar.style.setProperty("display", "none", "important");
-   }
-   else {
-    menuBar.style.setProperty("display", "block", "important");
-   }
-
-   isMenuBarShown = !isMenuBarShown;
-    
-
-}
-
-const navToggleBtn = document.getElementById("toggle-nav-bar-links");
-navToggleBtn.addEventListener("click", toggleNavBarLinks);
-
-// const navLinks = document.getElementsByClassName("nav-link");
-// for(var navLink of navLinks)
-// {
-//     navLink.addEventListener("click", toggleNavBarLinks);
-// }
-
+  homePageInit();
+  createSpotlight();
 </script>
 </html>
