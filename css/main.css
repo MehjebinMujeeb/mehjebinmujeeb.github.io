@@ -630,6 +630,190 @@ footer a :visited {
 .delay-2 { animation-delay: 0.7s; }
 .delay-3 { animation-delay: 0.8s; }
 
+
+.todo-list {
+    width: 100%;
+    display: flex;
+    align-items:center;
+    align-content: center;
+    justify-content: left;
+    justify-items: left;
+    flex-direction: column;
+}
+
+.todo-item {
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+    height: auto;
+    border: none;
+    word-break: break-all;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+    border-radius: 2px;
+}
+
+.item-done {
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    border-left: 5px solid rgb(99, 222, 99);
+}
+
+.item-inprogress {
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    border-left: 5px solid cornflowerblue;
+}
+
+.item-inprogress img{
+    width: 24px;
+    height: 24px;
+    filter: grayscale(1);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+.item-done img{
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+.todo-item p{
+  text-align: left;
+  margin-right: 8px;
+}
+
+.todo-window .text {
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+    border-radius: 10px;
+    padding: 10px 0px 10px 0px;
+}
+
+.todo-window .button {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    height: 40px;
+    border: none;
+    color:white;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 10px !important;
+}
+
+.btn-red {
+    background-color: crimson !important;
+}
+
+.btn-blue {
+    background-color: #6567FD !important;
+}
+
+.btn-white {
+    background-color: white !important;
+    color: black !important;
+}
+
+.clock-text {
+    color: black;
+    font-size: 3em;
+    font-family: 'Satoshi-Black';
+}
+
+.no-task-image {
+    animation-name: no-task-animation;
+    animation-duration: 2s;
+    animation-delay: 0.8s;
+    animation-iteration-count: infinite;
+    height: 80px;
+    width: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.timers-section button {
+    outline: none;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.timer-btns {
+  
+}
+
+/* <a href="https://www.flaticon.com/free-icons/reset" title="reset icons">Reset icons created by Dixit Lakhani_02 - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/pause" title="pause icons">Pause icons created by Slidicon - Flaticon</a> */
+/* <a href="https://www.flaticon.com/free-icons/play-button" title="play button icons">Play button icons created by abdul allib - Flaticon</a> */
+.round-btn{
+    display: inline-block;
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 60px;
+    border: none;
+    outline: none;
+    /* box-shadow: 0px 0px 3px 3px rgb(40, 38, 38, 0.3); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    cursor: pointer;
+}
+
+.play-btn {
+    background-image: url('/images/play.png');
+}
+
+.pause-btn {
+    background-image: url('/images/pause-button.png');
+}
+
+.redo-btn {
+    background-image: url('/images/redo.png');
+}
+
+.redo-btn:hover {
+    transform: rotate(90deg);
+}
+
+.printable-contact {
+    display: none;
+}
+
+/* Screen Media Query */
+
 @media screen and (min-width: 641px) and (max-width:1024px) {
     .main-window {
         height: auto;
@@ -835,181 +1019,105 @@ footer a :visited {
     }
 }
 
+/* Print Media */
 
-.todo-list {
-    width: 100%;
-    display: flex;
-    align-items:center;
-    align-content: center;
-    justify-content: left;
-    justify-items: left;
-    flex-direction: column;
-}
+@media print {
+    nav {
+        display: none;
+    }
 
-.todo-item {
-    margin: 10px 10px 10px 10px;
-    width: 100%;
-    height: auto;
-    border: none;
-    font-size: 16px;
-    background-color: white;
-    cursor: pointer;
-    box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-    border-radius: 2px;
-}
+    #spotlight {
+        all: unset
+    }
 
-.item-done {
-    display: flex;
-    flex-direction: row;
-    justify-items: start;
-    justify-content: left;
-    align-content: center;
-    align-items: center;
-    border-left: 5px solid rgb(99, 222, 99);
-}
+    #home {    
+            break-inside: avoid;
+    }
 
-.item-inprogress {
-    display: flex;
-    flex-direction: row;
-    justify-items: start;
-    justify-content: left;
-    align-content: center;
-    align-items: center;
-    border-left: 5px solid cornflowerblue;
-}
+    #contact {
+        break-inside: avoid;
+    }
 
-.item-inprogress img{
-    width: 24px;
-    height: 24px;
-    filter: grayscale(1);
-    margin-left: 5px;
-    margin-right: 5px;
-}
+    #about {
+        break-inside: avoid;
+    }
 
+    footer {
+        break-inside: avoid;
+    }
 
+    #home .cursor {
+        all: unset;
+        display: none;
+    }  
 
-.item-done img{
-    width: 24px;
-    height: 24px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
+    #home .shapes {
+        all: unset;
+        display: none;
+    }
+    
+    #home .get-started-btn {
+        display: none;
+    }
 
+    #home .subtitle {
+        display: none;
+    }
 
-.todo-item p{
-  text-align: left;
-  margin-right: 8px;
-}
+    #home .content {
+        top: 0;
+        left: 0;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        mix-blend-mode: unset;
+        font-size: 2em;
+        font-family: 'Satoshi-Black';
+        font-weight: bolder;
+        cursor: none;
+    }
 
-.todo-window .text {
-    text-align: center;
-    width: 100%;
-    height: 20px;
-    border: none;
-    font-size: 16px;
-    box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-    border-radius: 10px;
-    padding: 10px 0px 10px 0px;
-}
+    [data-inviewport] {
+        animation: unset;
+        transition: 0s;
+        opacity: 1;
+    }
 
-.todo-window .button {
-    display: block;
-    min-width: 100%;
-    max-width: 100%;
-    height: 40px;
-    border: none;
-    color:white;
-    font-size: 16px;
-    background-color: white;
-    box-shadow: 0px 0px 5px 1px rgba(25, 25, 25, 0.174); 
-    border-radius: 10px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    padding: 10px 10px 10px 10px !important;
-}
+    #contact form {
+        display: none;
+    }
+    #contact .printable-contact {
+        display: unset;
+        visibility: visible;
+    }
 
-.btn-red {
-    background-color: crimson !important;
-}
+    .timer-window {
+        all:unset;
+        display: none;
+    }
 
-.btn-blue {
-    background-color: #6567FD !important;
-}
+    .todo-window {
+        all: unset;
+        /* overflow: visible; */
+        overflow:unset;
+    }
 
-.btn-white {
-    background-color: white !important;
-    color: black !important;
-}
+    .todo-window .todo-list{
+        all: unset;
+        overflow:unset;
+    }
 
-.clock-text {
-    color: black;
-    font-size: 3em;
-    font-family: 'Satoshi-Black';
-}
+    .todo-window input[type="button"] {
+        display: none;
+    }
 
-.no-task-image {
-    animation-name: no-task-animation;
-    animation-duration: 2s;
-    animation-delay: 0.8s;
-    animation-iteration-count: infinite;
-    height: 80px;
-    width: 80px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.timers-section button {
-    outline: none;
-    border: none;
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-}
-
-.timer-btns {
-  
-}
-
-/* <a href="https://www.flaticon.com/free-icons/reset" title="reset icons">Reset icons created by Dixit Lakhani_02 - Flaticon</a> */
-/* <a href="https://www.flaticon.com/free-icons/pause" title="pause icons">Pause icons created by Slidicon - Flaticon</a> */
-/* <a href="https://www.flaticon.com/free-icons/play-button" title="play button icons">Play button icons created by abdul allib - Flaticon</a> */
-.round-btn{
-    display: inline-block;
-    background-color: white;
-    height: 60px;
-    width: 60px;
-    margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
-    border-radius: 60px;
-    border: none;
-    outline: none;
-    /* box-shadow: 0px 0px 3px 3px rgb(40, 38, 38, 0.3); */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 50% 50%;
-    cursor: pointer;
-}
-
-.play-btn {
-    background-image: url('/images/play.png');
-}
-
-.pause-btn {
-    background-image: url('/images/pause-button.png');
-}
-
-.redo-btn {
-    background-image: url('/images/redo.png');
-}
-
-.redo-btn:hover {
-    transform: rotate(90deg);
+    .todo-window input[type="text"] {
+        display: none;
+    }
 }
 
 
